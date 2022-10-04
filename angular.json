@@ -104,6 +104,16 @@
               "./node_modules/uikit/dist/js/uikit-icons.min.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "moneytrain:build:production",
+            "firebaseProject": "vehicle-self-service-portal",
+            "firebaseHostingSite": "vehicle-self-service-portal"
+          }
         }
       }
     }

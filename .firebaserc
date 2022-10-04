@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "vehicle-self-service-portal"
+  },
+  "targets": {
+    "vehicle-self-service-portal": {
+      "hosting": {
+        "moneytrain": [
+          "vehicle-self-service-portal"
+        ]
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@ const htmlToPdfmake = require("html-to-pdfmake");
 export class ExporterComponent implements OnInit {
 
   selectedVehicle?: Vehicle;
+  exporter_desc = 'Get your favourite vehicle details in a single click. Enter the VIN & Click on the get VIN details button. Also you can export vehicle info in just one Click. You have the option to Export the data in excel or pdf formats.';
   vehicleDetail : any;
   VIN:string ='';
   vehicleJsonObj: Array<Vehicle[]> = [];

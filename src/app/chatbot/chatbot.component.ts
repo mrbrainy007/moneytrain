@@ -10,8 +10,8 @@ export class ChatbotComponent implements OnInit {
     title: 'Chatbot',
     id: 1,
     name: 'Vehicle_Chatbot',
-    description:'Get Ready to experience the most innovative way of fetching information for an Vehicle.'
-    +' We have an chatbot for you to answer all your queries...!',
+    description:'Get Ready to experience the most innovative way of fetching information for a Vehicle.'
+    +' We have a chatbot for you to answer all your queries...!',
   };
   constructor() { }
 

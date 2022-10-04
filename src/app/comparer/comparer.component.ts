@@ -18,7 +18,7 @@ export class ComparerComponent implements OnInit {
 
 
   vehicles: Vehicle[] = [];
-  comparer_desc = 'Compare different vehicles in just one click...! Just Add the vehicles which you want to compare and click the compare Button.';
+  comparer_desc = 'Compare different vehicles in just one click...! Just Add the VIN of vehicles which you want to compare and click the Compare VIN Details button.';
 
   constructor(private vehicleService: VehicleService, private messageService: MessageService) { }
 

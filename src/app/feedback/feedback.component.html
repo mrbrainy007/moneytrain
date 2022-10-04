@@ -1,0 +1,29 @@
+<h2>{{feedback_title}}</h2>
+<h4>{{feedback_desc}} </h4>
+<button class="btn btn-primary" >Add a Feedback</button>
+
+<div uk-grid>
+  <div class="uk-width-1-2" style="background-color: beige;">
+    <h2 class="name">Top 5 Cars of the Week</h2>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+          <span class="badge">{{hero.id}}</span>        
+          <span class="name">{{hero.carName}}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="uk-width-1-2 " style="background-color: #EEE " *ngIf="selectedHero">
+    <h2>{{selectedHero.carName | uppercase}}'s Review</h2>
+    <!-- <div>id: {{selectedHero.id}}</div> -->
+    <div>
+      <!-- <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">       -->
+      <h3 class="">{{selectedHero.title}}</h3>     
+      <h4 class="">{{selectedHero.description}}</h4>
+      <h5 class="uk-align-right">Review By : {{selectedHero.name}}({{selectedHero.emailId}})</h5>
+    </div>
+  </div>
+</div>

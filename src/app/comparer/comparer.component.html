@@ -1,0 +1,82 @@
+<p>{{comparer_desc}}</p>
+
+<div class="uk-margin">
+  <div>
+      
+      <label class = "uk-align-center" for="name1"></label>
+      <input class = "uk-input" id="name1" type="text" placeholder="Enter 1st VIN...!" [(ngModel)]="VIN1">
+      <label class = "uk-align-center" for="name2"></label>
+      <input class = "uk-input" id="name2" type="text" placeholder="Enter 2nd VIN...!" [(ngModel)]="VIN2">
+     
+  </div>
+  <div>
+      <button class="uk-align-center" type="submit" (click)="getBothVehicleDetails()">Compare VIN Details</button>      
+  </div>
+</div>
+<div class="uk-overflow-auto" *ngIf="this.vehicleDetail1 && this.vehicleDetail2">
+<table class="uk-table  uk-table-divider uk-table-striped uk-table-middle uk-table-hover">
+<caption>Comparison of VIN 1 : {{VIN1}} && VIN 2 : {{VIN2}} are as follows -</caption>
+<thead>
+  <tr>
+      <th>Properties</th>
+      <th>VIN1 ({{VIN1}})</th>
+      <th>VIN2 ({{VIN2}})</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+      <td>Make</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.make}}</td>    
+      <td>{{this.vehicleDetail2.__fakeVehicle.make}}</td>         
+  </tr>
+  <tr>
+      <td>Model</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.model}}</td> 
+      <td>{{this.vehicleDetail2.__fakeVehicle.model}}</td>           
+  </tr>
+  <tr>
+      <td>Year</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.year}}</td>   
+      <td>{{this.vehicleDetail2.__fakeVehicle.year}}</td>         
+  </tr>
+  <tr>
+      <td>Drive Type</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.drivetrain}}</td>     
+      <td>{{this.vehicleDetail2.__fakeVehicle.drivetrain}}</td>        
+  </tr>
+  <tr>
+      <td>Transmission Type</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.transmission}}</td>        
+      <td>{{this.vehicleDetail2.__fakeVehicle.transmission}}</td>      
+  </tr>
+  <tr>
+      <td>Color</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.color}}</td>    
+      <td>{{this.vehicleDetail2.__fakeVehicle.color}}</td>          
+  </tr>
+  <tr>
+      <td>Carfax Report Url</td>
+      <td>{{this.vehicleDetail1.__fakeVehicle.carfaxReport}}</td>  
+      <td>{{this.vehicleDetail2.__fakeVehicle.carfaxReport}}</td>           
+  </tr>
+  
+  <tr>
+      <td>Highlights</td>
+      <td>
+          <ul>
+              <li *ngFor="let item of this.vehicleDetail1.highlights">
+                {{item}}
+              </li>
+            </ul>
+      </td>    
+      <td>
+        <ul>
+            <li *ngFor="let item of this.vehicleDetail2.highlights">
+              {{item}}
+            </li>
+          </ul>
+    </td>        
+  </tr>
+</tbody>
+</table>
+<div>

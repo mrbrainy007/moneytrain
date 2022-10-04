@@ -1,0 +1,81 @@
+<div class="uk-margin">
+    <div>
+        
+        <label class = "uk-align-center" for="name"></label>
+        <input class = "uk-input" id="name" type="text" placeholder="Enter VIN...!" [(ngModel)]="VIN">
+       
+    </div>
+    <div>
+        <button class="uk-align-center" type="submit" (click)="getVehicleDetails()">Get VIN Details</button>      
+    </div>
+</div>
+<div>
+<div *ngIf="this.vehicleDetail">
+    <button (click)="exporttoexcel()">Export to Excel</button> 
+    <button class="btn btn-primary" (click)="exporttopdf();">Export To PDF</button>
+</div>
+<div class="uk-overflow-auto" *ngIf="this.vehicleDetail" id="pdfTable" #pdfTable>
+<table id="excel-table" class="uk-table  uk-table-divider uk-table-striped uk-table-middle " >
+    <caption>Details of VIN : {{VIN}}</caption>
+    <thead>
+        <tr>
+            <th>Properties</th>
+            <th>Values</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>VIN</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.vin}}</td>           
+        </tr>
+        <tr>
+            <td>Make</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.make}}</td>           
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.model}}</td>            
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.year}}</td>           
+        </tr>
+        <tr>
+            <td>Drive Type</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.drivetrain}}</td>            
+        </tr>
+        <tr>
+            <td>Transmission Type</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.transmission}}</td>           
+        </tr>
+        <tr>
+            <td>Odometer Reading</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.odometer}}</td>            
+        </tr>
+        <tr>
+            <td>Exterior Color</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.color}}</td>            
+        </tr>
+        <tr>
+            <td>Interior Color</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.interiorColor}}</td>            
+        </tr>
+        <tr>
+            <td>Carfax Report Url</td>
+            <td>{{this.vehicleDetail.__fakeVehicle.carfaxReport}}</td>           
+        </tr>
+        
+        <tr>
+            <td>Highlights</td>
+            <td>
+                <ul>
+                    <li *ngFor="let item of this.vehicleDetail.highlights">
+                      {{item}}
+                    </li>
+                  </ul>
+            </td>            
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
